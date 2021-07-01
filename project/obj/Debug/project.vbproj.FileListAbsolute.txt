@@ -1,0 +1,14 @@
+C:\ade\vb\project\project\bin\Debug\project.exe.config
+C:\ade\vb\project\project\bin\Debug\project.exe
+C:\ade\vb\project\project\bin\Debug\project.pdb
+C:\ade\vb\project\project\bin\Debug\project.xml
+C:\ade\vb\project\project\obj\Debug\project.vbprojAssemblyReference.cache
+C:\ade\vb\project\project\obj\Debug\project.Resources.resources
+C:\ade\vb\project\project\obj\Debug\project.vbproj.GenerateResource.cache
+C:\ade\vb\project\project\obj\Debug\project.vbproj.CoreCompileInputs.cache
+C:\ade\vb\project\project\obj\Debug\project.exe
+C:\ade\vb\project\project\obj\Debug\project.xml
+C:\ade\vb\project\project\obj\Debug\project.pdb
+C:\ade\vb\project\project\obj\Debug\project.cumbil.resources
+C:\ade\vb\project\project\obj\Debug\project.member.resources
+C:\ade\vb\project\project\obj\Debug\project.login.resources

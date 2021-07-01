@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AKCUMBIL", "project\AKCUMBIL.vbproj", "{2C1DA6BE-1842-4413-97E4-05DF0670CD82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C1DA6BE-1842-4413-97E4-05DF0670CD82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C1DA6BE-1842-4413-97E4-05DF0670CD82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C1DA6BE-1842-4413-97E4-05DF0670CD82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C1DA6BE-1842-4413-97E4-05DF0670CD82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3DDA491-0A06-4F96-BB26-708BC9AF8CC9}
+	EndGlobalSection
+EndGlobal
