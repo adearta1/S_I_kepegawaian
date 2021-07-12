@@ -27,7 +27,7 @@
                 <div class="card-header bg-primary mb-0"><h5 class="text-center text-white">Tambah Data <span class="font-weight-bold text-light " >Admin</span></h5></div>
                 <div class="card-body">
                 <?php
-                include("koneksi.php");
+                include("../../koneksi.php");
                 if(isset($_POST['tambah'])){
                     $nama=$_POST['nama'];
                     $username = $_POST['username'];
@@ -36,7 +36,7 @@
                     if($password == $password2){
                         $sql="INSERT INTO admin (nama,username,password) values ('$nama','$username','$password')";
                         mysqli_query($koneksi,$sql) or die ('gagal');
-                        header('location:admin.php');
+                        header('location:../../admin.php');
                     }else{ ?>
                         <div class="alert alert-primary text-center text-danger" role="alert">
                             konfirmasi password tidak sesuai
