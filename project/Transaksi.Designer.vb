@@ -628,9 +628,6 @@ Partial Class Transaksi
         Me.b_reser.Text = "Reset"
         Me.b_reser.UseVisualStyleBackColor = False
         '
-        'PrintDocument1
-        '
-        '
         'Transaksi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)

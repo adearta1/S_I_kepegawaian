@@ -131,7 +131,13 @@ Public Class Transaksi
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles b_print.Click
         Try
             If txt_plat.Text = "" Then
-                MsgBox("data belum terisi")
+                MsgBox("data nomor plat belum terisi")
+            ElseIf txt_harga.Text = "" Then
+                MsgBox("data harga total belum terisi")
+            ElseIf txt_pembayaran.Text = "" Then
+                MsgBox("data pembayaran belum terisi")
+            ElseIf txt_kembalian.Text = "" Then
+                MsgBox("data kembalian belum terisi")
             Else
                 'menyimpan data ke database 
                 Call checked()
