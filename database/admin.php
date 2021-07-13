@@ -61,9 +61,8 @@
                 Karyawan
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Data diri</a>
+                <a class="dropdown-item" href="datadiri.php">Data diri</a>
                 <a class="dropdown-item" href="#">Pendidikan</a>
-                <a class="dropdown-item" href="#">Jabatan</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -88,7 +87,7 @@
         <span class="navbar-brand mb-0 h1">Data Admin</span>
       </nav>
       <nav class="navbar navbar-light bg-light">
-          <a href="aksi/admin/td_admin.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">+ Tambah Data</a>
+          <a href="aksi/admin/tambahdata.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">+ Tambah Data</a>
           <form action="admin.php" method="get" class="form-inline">
               <input name="cari" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
               <button  class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>

@@ -1,3 +1,10 @@
+<?php
+
+    require_once 'koneksi.php';
+    $sql ="SELECT * FROM karyawan WHERE NIK";
+    $query = $koneksi->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +22,15 @@
       header("location:../login.php?pesan=belum_login");
     }
     ?>
+    <script language="javascript">
+    function tanya() {
+      if (confirm ("Apakah Anda yakin akan menghapus data ini ?")) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -66,12 +82,71 @@
       </div>
     </nav>
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <img src="gambar/hobimegel.png" alt="" width="200" class="rounded-circle">
-          <h1 class="display-1">HOBI MEGEL</h1>
-          <p class="lead font-weight-bold">selamat datang, <?php echo $_SESSION['username']; ?></p>
-        </div>
+    <div class="container-xl mt-5">
+      <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Data Karyawan</span>
+      </nav>
+      <nav class="navbar navbar-light bg-light">
+          <a href="aksi/admin/tambahdata.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">+ Tambah Data</a>
+          <form action="datadiri.php" method="get" class="form-inline">
+              <input name="cari" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button  class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </nav>
+      <table class="table mt-2 table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">NIK</th>
+            <th scope="col">Nama Karyawan</th>
+            <th scope="col">Tanggal Lahir </th>
+            <th scope="col">Agama</th>
+            <th scope="col">Jenis Kelamin</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">Telepon</th>
+            <th scope="col">Email</th>
+            <th scope="col">Kode jabatan</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Update at</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          if(isset($_GET['cari'])){
+            $cari = $_GET['cari'];
+            $query = mysqli_query($koneksi,"SELECT * FROM karyawan WHERE NIK LIKE '%$cari%' 
+            OR nama_karyawan LIKE '%$cari%'
+            OR telepon LIKE '%$cari%'
+            OR email LIKE '%$cari%'");    
+           }else{
+            $query = mysqli_query($koneksi,"SELECT * FROM karyawan");  
+           }
+          while($d = mysqli_fetch_array($query)){
+          ?>
+          <tr>
+            <th scope="row"><?php echo $d['NIK']; ?></th>
+            <td><?php echo $d['NIK']; ?></td>
+            <td><?php echo $d['nama_karyawan']; ?></td>
+            <td><?php echo $d['tanggal_lahir']; ?></td>
+            <td><?php echo $d['agama']; ?></td>
+            <td><?php echo $d['jenis_kelamin']; ?></td>
+            <td><?php echo $d['alamat']; ?></td>
+            <td><?php echo $d['telepon']; ?></td>
+            <td><?php echo $d['email']; ?></td>
+            <td><?php echo $d['kd_jabatan']; ?></td>
+            <td><?php echo $d['created_at']; ?></td>
+            <td><?php echo $d['update_at']; ?></td>
+            <td>
+              <a href="aksi/karyawan/edit.php?NIK=<?php echo $d['NIK']; ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Edit</a>
+              <a href="aksi/karyawan/delete.php?NIK=<?php echo $d['NIK'] ; ?>" onClick='return tanya()' class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Delete</a>
+            </td>
+          </tr>
+          <?php
+          }
+          ?>
+        </tbody>
+      </table>       
     </div>
+    
 </body>
 </html>
