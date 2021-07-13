@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-group">
                         <input type="submit" name="edit" value="Simpan" class="btn btn-primary btn-block">
-                        <a href="admin.php" class="btn btn-danger btn-block active" role="button" aria-pressed="true">Batal</a>
+                        <a href="../../admin.php" class="btn btn-danger btn-block active" role="button" aria-pressed="true">Batal</a>
                     </div>
                 </form>
                 <?php }?>
