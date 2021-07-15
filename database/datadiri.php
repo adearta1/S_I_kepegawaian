@@ -82,7 +82,7 @@
       </div>
     </nav>
 
-    <div class="container-xl mt-5">
+    <div class="container-fluid mt-5">
       <nav class="navbar navbar-light bg-light">
         <span class="navbar-brand mb-0 h1">Data Karyawan</span>
       </nav>
@@ -125,7 +125,6 @@
           ?>
           <tr>
             <th scope="row"><?php echo $d['NIK']; ?></th>
-            <td><?php echo $d['NIK']; ?></td>
             <td><?php echo $d['nama_karyawan']; ?></td>
             <td><?php echo $d['tanggal_lahir']; ?></td>
             <td><?php echo $d['agama']; ?></td>
@@ -136,7 +135,7 @@
             <td><?php echo $d['kd_jabatan']; ?></td>
             <td><?php echo $d['created_at']; ?></td>
             <td><?php echo $d['update_at']; ?></td>
-            <td>
+            <td class="text-center">
               <a href="aksi/karyawan/edit.php?NIK=<?php echo $d['NIK']; ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Edit</a>
               <a href="aksi/karyawan/delete.php?NIK=<?php echo $d['NIK'] ; ?>" onClick='return tanya()' class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Delete</a>
             </td>

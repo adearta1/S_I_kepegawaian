@@ -93,7 +93,7 @@
               <button  class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
           </form>
       </nav>
-      <table class="table mt-2 table-striped">
+      <table class="table shadow-sm p-3 mb-5 bg-white rounded mt-2 table-striped">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Id Admin</th>

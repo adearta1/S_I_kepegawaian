@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Document</title>
 </head>
-<body class="text-center" style="background-color: rgb(64, 99, 255);">
+<body>
+    <?php 
+    session_start();
+    if($_SESSION['status']!="login"){
+      header("location:../../../login.php?pesan=belum_login");
+    }
+    ?>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -20,10 +26,50 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     -->
     
-    <div class="container" style="margin-top : 8rem;">
+    <!-- tampilan navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand text-light font-weight-bold" href="index.php">Hobimegel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="../../admin.php">Admin</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Karyawan
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="../../datadiri.php">Data diri</a>
+                <a class="dropdown-item" href="#">Pendidikan</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Absensi
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Absen</a>
+                <a class="dropdown-item" href="#">Izin</a>
+              </div>
+            </li>
+        </ul>
+        <span class="navbar-text font-weight-bold text-light">
+          <?php echo $_SESSION['username']; ?>
+          <a href="logout.php" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Logout</a>
+        </span>
+      </div>
+    </nav>
+
+    <!-- mengisi data -->
+    <div class="container pt-4 pb-4" style="margin-top : 4rem;">
         <div class="row justify-content-md-center ">
             <div class="col-md-4">
-            <div class="card">
+            <div class="card shadow sm-3 mb-5 bg-white rounded">
                 <div class="card-header bg-primary mb-0"><h5 class="text-center text-white">Tambah Data <span class="font-weight-bold text-light " >Admin</span></h5></div>
                 <div class="card-body">
                 <?php
@@ -47,19 +93,19 @@
                 <form action="" method="post">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Nama</label>
-                        <input type="text" name="nama" class="form-control" placeholder="Nama">
+                        <input type="text" name="nama" class="form-control" placeholder="Masukkan Nama Lengkap Anda">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Username">
+                        <input type="text" name="username" class="form-control" placeholder="Masukkan Username Anda">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Masukkan Password Anda">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Confirm Password</label>
-                        <input type="password" name="password2" class="form-control" placeholder="Confirm Password">
+                        <input type="password" name="password2" class="form-control" placeholder="Confirm Password Anda">
                     </div>
                     <div class="form-group">
                         <input type="submit" name="tambah" value="Simpan" class="btn btn-primary btn-block">

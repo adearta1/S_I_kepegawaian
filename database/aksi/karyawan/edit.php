@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
+<?php 
     session_start();
     if($_SESSION['status']!="login"){
       header("location:../../../login.php?pesan=belum_login");
@@ -59,36 +59,43 @@
         </ul>
         <span class="navbar-text font-weight-bold text-light">
           <?php echo $_SESSION['username']; ?>
-          <a href="logout.php" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Logout</a>
+          <a href="../../logout.php" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Logout</a>
         </span>
       </div>
     </nav>
 
-    <div class="container pt-5 pb-5" style="margin-top : 4rem;">
+    <!-- edit data karyawan -->
+    <div class="container pt-3 pb-3">
         <div class="row justify-content-md-center ">
-            <div class="col-md-4">
-            <div class="card shadow sm-3 mb-5 bg-white rounded">
-                <div class="card-header bg-primary mb-0"><h5 class="text-center text-white">Edit Data <span class="font-weight-bold text-light " >Admin</span></h5></div>
+            <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary mb-0"><h5 class="text-center text-white">Edit Data <span class="font-weight-bold text-light " >Karyawan</span></h5></div>
                 <div class="card-body">
                 <?php
                     include_once("../../koneksi.php");
-                    if (isset($_GET['id_admin'])) {
-                        $ubah=$_GET['id_admin'];
+                    if (isset($_GET['NIK'])) {
+                        $ubah=$_GET['NIK'];
                     } else {
                         die ("ERROR");
                     }
                     
-                    $da = mysqli_query($koneksi,"SELECT * FROM admin WHERE id_admin='$ubah'");
+                    $da = mysqli_query($koneksi,"SELECT * FROM karyawan WHERE NIK='$ubah'");
                     if (isset($_POST['edit'])) {
-                        $id = $_POST['id_admin'];
-                        $nama = $_POST['nama'];
-                        $username = $_POST['username'];
-                        $password = $_POST['password'];
+                        $NIK = $_POST['NIK'];
+                        $nama_karyawan = $_POST['nama_karyawan'];
+                        $tanggal_lahir = $_POST['tanggal_lahir'];
+                        $agama = $_POST['agama'];
+                        $jenis_kelamin = $_POST['jenis_kelamin'];
+                        $alamat = $_POST['alamat'];
+                        $telepon = $_POST['telepon'];
+                        $email = $_POST['email'];
+                        $kd_jabatan = $_POST['kd_jabatan'];
+                        $update_at = $_POST['update_at'];
                             
-                        $query="UPDATE admin SET id_admin = '$id', username='$username',password='$password',nama='$nama' WHERE id_admin='$id'";
+                        $query="UPDATE karyawan SET NIK = '$NIK', nama_karyawan='$nama_karyawan', tanggal_lahir='$tanggal_lahir', agama='$agama', jenis_kelamin='$jenis_kelamin', alamat='$alamat', telepon='$telepon', email='$email', kd_jabatan='$kd_jabatan', update_at='$update_at' WHERE NIK='$NIK'";
                         $sql=mysqli_query($koneksi,$query);
                         if ($sql) {
-                            header("location:../../admin.php");
+                            echo '<script>alert("Berhasil mengedit data."); document.location="../../datadiri.php";</script>';
                         } else {
                         ?>
                         <div class="alert alert-primary text-center text-danger" role="alert">
@@ -103,21 +110,53 @@
                 ?>
                 <form action="" method="post">
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Nama</label>
-                        <input type="hidden" name="id_admin" class="form-control" value="<?php echo $dat['id_admin']; ?>">
-                        <input type="text" name="nama" class="form-control" value="<?php echo $dat['nama']; ?>">
+                        <label for="exampleFormControlSelect1">Nama Karyawan</label>
+                        <input type="hidden" name="NIK" class="form-control" value="<?php echo $dat['NIK']; ?>">
+                        <textarea name="update_at" style="display:none"><?php echo date("h:i:s d/m/Y ");?></textarea>
+                        <input type="text" name="nama_karyawan" class="form-control" value="<?php echo $dat['nama_karyawan']; ?>">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Username</label>
-                        <input type="text" name="username" class="form-control" value="<?php echo $dat['username']; ?>">
+                        <label for="exampleFormControlSelect1">Tanggal Lahir</label>
+                        <input type="date" name="tanggal_lahir" class="form-control" value="<?php echo $dat['tanggal_lahir']; ?>">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Password</label>
-                        <input type="text" name="password" class="form-control" value="<?php echo $dat['password']; ?>">
+                        <label for="exampleFormControlSelect1">Agama</label>
+                        <select class="form-control" name="agama" class="form-control">
+                            <option><?php echo $dat['agama']; ?></option>
+                            <option>Islam</option>
+                            <option>Hindu</option>
+                            <option>Kristen</option>
+                            <option>Budha</option>
+                            <option>Konghucu</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Jenis Kelamin</label>
+                        <select class="form-control" name="jenis_kelamin" class="form-control">
+                            <option><?php echo $dat['jenis_kelamin']; ?></option>
+                            <option>LakiLaki</option>
+                            <option>Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Alamat</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="alamat" rows="3"><?php echo $dat['alamat']; ?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Telepon</label>
+                        <input type="text" name="telepon" class="form-control" value="<?php echo $dat['telepon']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Email</label>
+                        <input type="email" name="email" class="form-control" value="<?php echo $dat['email']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Kode Jabatan</label>
+                        <input type="text" name="kd_jabatan" class="form-control" value="<?php echo $dat['kd_jabatan']; ?>">
                     </div>
                     <div class="form-group">
                         <input type="submit" name="edit" value="Simpan" class="btn btn-primary btn-block">
-                        <a href="../../admin.php" class="btn btn-danger btn-block active" role="button" aria-pressed="true">Batal</a>
+                        <a href="../../datadiri.php" class="btn btn-danger btn-block active" role="button" aria-pressed="true">Batal</a>
                     </div>
                 </form>
                 <?php }?>
