@@ -88,7 +88,7 @@
                         $query="UPDATE admin SET id_admin = '$id', username='$username',password='$password',nama='$nama' WHERE id_admin='$id'";
                         $sql=mysqli_query($koneksi,$query);
                         if ($sql) {
-                            header("location:../../admin.php");
+                          echo '<script>alert("Berhasil mengedit data."); document.location="../../admin.php";</script>';
                         } else {
                         ?>
                         <div class="alert alert-primary text-center text-danger" role="alert">

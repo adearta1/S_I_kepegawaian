@@ -59,11 +59,13 @@
             <div class="card">
                 <div class="card-header bg-primary mb-0"><h5 class="text-center text-white"> <span class="font-weight-bold text-light " >Absensi</span></h5></div>
                 <div class="card-body">
+                <form action="absen.php" method="post">
                     <div class="form-group">
+                        <textarea name="tanggal" style="display:none"><?php echo date("h:i:s d/m/Y ");?></textarea>
                         <input type="text" name="NIK" class="form-control" placeholder="Masukkan NIK anda">
                     </div>
                     <div class="form-group">
-                        <select class="form-control">
+                        <select name="keterangan" class="form-control">
                             <option>Hadir</option>
                             <option>Tidak Hadir</option>
                         </select>
@@ -83,14 +85,21 @@
             <div class="card">
                 <div class="card-header bg-primary mb-0"><h5 class="text-center text-white"> <span class="font-weight-bold text-light " >Izin</span></h5></div>
                 <div class="card-body">
+                <form action="izin.php" method="post">
                     <div class="form-group">
+                        <textarea name="created_at" style="display:none"><?php echo date("h:i:s d/m/Y ");?></textarea>
                         <input type="text" name="NIK" class="form-control" placeholder="Masukkan NIK anda">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan keterangan anda"></textarea>
+                        <textarea name="keterangan" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan keterangan anda"></textarea>
+                    </div class="form-group">
+                    <label for="exampleFormControlSelect1">Izin dari tanggal</label>
+                        <input type="date" name="izin_tanggal" class="form-control" >
+                        <label for="exampleFormControlSelect1">Izin sampai tanggal</label>
+                        <input type="date" name="sampai_tanggal" class="form-control">
                     </div>
                     <div class="form-group">
-                    <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-block">
+                        <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-block">
                     </div>
                 </form>
                 </div>

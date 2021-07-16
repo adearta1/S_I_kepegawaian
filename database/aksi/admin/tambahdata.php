@@ -82,7 +82,7 @@
                     if($password == $password2){
                         $sql="INSERT INTO admin (nama,username,password) values ('$nama','$username','$password')";
                         mysqli_query($koneksi,$sql) or die ('gagal');
-                        header('location:../../admin.php');
+                        echo '<script>alert("Berhasil menambah data."); document.location="../../admin.php";</script>';
                     }else{ ?>
                         <div class="alert alert-primary text-center text-danger" role="alert">
                             konfirmasi password tidak sesuai
