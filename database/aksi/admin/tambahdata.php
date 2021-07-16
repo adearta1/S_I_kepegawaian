@@ -27,7 +27,7 @@
     -->
     
     <!-- tampilan navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <a class="navbar-brand text-light font-weight-bold" href="index.php">Hobimegel</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../../index.php">Home <span class="sr-only">(current)</span></a>
             <li class="nav-item">
                 <a class="nav-link" href="../../admin.php">Admin</a>
             </li>
@@ -66,7 +66,7 @@
     </nav>
 
     <!-- mengisi data -->
-    <div class="container pt-4 pb-4" style="margin-top : 4rem;">
+    <div class="container pt-5 pb-5" style="margin-top : 5rem;">
         <div class="row justify-content-md-center ">
             <div class="col-md-4">
             <div class="card shadow sm-3 mb-5 bg-white rounded">

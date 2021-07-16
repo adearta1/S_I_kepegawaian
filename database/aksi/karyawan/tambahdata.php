@@ -27,7 +27,7 @@
     -->
     
     <!-- tampilan navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <a class="navbar-brand text-light font-weight-bold" href="index.php">Hobimegel</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../../index.php">Home <span class="sr-only">(current)</span></a>
             <li class="nav-item">
                 <a class="nav-link" href="../../admin.php">Admin</a>
             </li>
@@ -66,52 +66,94 @@
     </nav>
 
     <!-- mengisi data --> 
-    <div class="container" style="margin-top : 8rem;">
+    <div class="container pt-5 pb-5" style="margin-top:2rem;">
         <div class="row justify-content-md-center ">
-            <div class="col-md-4">
+            <div class="col-md-7">
             <div class="card">
-                <div class="card-header bg-primary mb-0"><h5 class="text-center text-white">Tambah Data <span class="font-weight-bold text-light " >Admin</span></h5></div>
+                <div class="card-header bg-primary mb-0"><h5 class="text-center text-white">Tambah Data <span class="font-weight-bold text-light " >Karyawan</span></h5></div>
                 <div class="card-body">
                 <?php
                 include("../../koneksi.php");
                 if(isset($_POST['tambah'])){
-                    $nama=$_POST['nama'];
-                    $username = $_POST['username'];
-                    $password=$_POST['password'];
-                    $password2=$_POST['password2'];
-                    if($password == $password2){
-                        $sql="INSERT INTO admin (nama,username,password) values ('$nama','$username','$password')";
-                        mysqli_query($koneksi,$sql) or die ('gagal');
-                        header('location:../../admin.php');
+                    $nama_karyawan = $_POST['nama_karyawan'];
+                    $tanggal_lahir = $_POST['tanggal_lahir'];
+                    $agama = $_POST['agama'];
+                    $jenis_kelamin = $_POST['jenis_kelamin'];
+                    $alamat = $_POST['alamat'];
+                    $telepon = $_POST['telepon'];
+                    $email = $_POST['email'];
+                    $kd_jabatan = $_POST['kd_jabatan'];
+                    $created_at = $_POST['created_at'];
+                    
+                    $query="INSERT INTO karyawan values ('','$nama_karyawan','$tanggal_lahir','$agama','$jenis_kelamin','$alamat','$telepon','$email','$kd_jabatan','$created_at','')";
+                    $sql=mysqli_query($koneksi,$query);
+                    if($sql){
+                        echo '<script>alert("Berhasil menambah data."); document.location="../../datadiri.php";</script>';
                     }else{ ?>
                         <div class="alert alert-primary text-center text-danger" role="alert">
-                            konfirmasi password tidak sesuai
+                            gagal menambah data
                         </div>
                     <?php }
                 }
                 ?>
-                <form action="" method="post">
+                  <form action="" method="post">
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Nama</label>
-                        <input type="text" name="nama" class="form-control" placeholder="Nama">
+                        <label for="exampleFormControlSelect1">Nama Karyawan</label>
+                        <textarea name="created_at" style="display:none"><?php echo date("h:i:s d/m/Y ");?></textarea>
+                        <input type="text" name="nama_karyawan" class="form-control" placeholder="Masukkan Nama Lengkap Anda">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Username">
+                        <label for="exampleFormControlSelect1">Tanggal Lahir</label>
+                        <input type="date" name="tanggal_lahir" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <label for="exampleFormControlSelect1">Agama</label>
+                        <select class="form-control" name="agama" class="form-control">
+                            <option>Islam</option>
+                            <option>Hindu</option>
+                            <option>Kristen</option>
+                            <option>Budha</option>
+                            <option>Konghucu</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Confirm Password</label>
-                        <input type="password" name="password2" class="form-control" placeholder="Confirm Password">
+                        <label for="exampleFormControlSelect1">Jenis Kelamin</label>
+                        <select class="form-control" name="jenis_kelamin" class="form-control">
+                            <option>LakiLaki</option>
+                            <option>Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Alamat</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="alamat" rows="3" placeholder="Masukkan Alamat Anda"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Telepon</label>
+                        <input type="number" name="telepon" class="form-control" placeholder="Masukkan Telepon Anda">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Masukkan Email Anda">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Jabatan</label>
+                        <select class="form-control" name="kd_jabatan" class="form-control">
+                          <?php
+                          $query = "SELECT id_jabatan, jabatan FROM jabatan ORDER BY jabatan"; 
+                          $result = mysqli_query($koneksi, $query);
+                          while ($hasil = mysqli_fetch_assoc($result)) {
+                              echo "
+                              <option value='$hasil[id_jabatan]'>$hasil[jabatan]</option>
+                              ";
+                          }
+                          ?>
+                        </select>
                     </div>
                     <div class="form-group">
                         <input type="submit" name="tambah" value="Simpan" class="btn btn-primary btn-block">
-                        <a href="../../admin.php" class="btn btn-danger btn-block active" role="button" aria-pressed="true">Batal</a>
+                        <a href="../../datadiri.php" class="btn btn-danger btn-block active" role="button" aria-pressed="true">Batal</a>
                     </div>
-                </form>
+                  </form>
                 </div>
             </div>
             </div>

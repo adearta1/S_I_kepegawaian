@@ -87,7 +87,7 @@
         <span class="navbar-brand mb-0 h1">Data Karyawan</span>
       </nav>
       <nav class="navbar navbar-light bg-light">
-          <a href="aksi/admin/tambahdata.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">+ Tambah Data</a>
+          <a href="aksi/karyawan/tambahdata.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">+ Tambah Data</a>
           <form action="datadiri.php" method="get" class="form-inline">
               <input name="cari" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
               <button  class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
@@ -104,7 +104,7 @@
             <th scope="col">Alamat</th>
             <th scope="col">Telepon</th>
             <th scope="col">Email</th>
-            <th scope="col">Kode jabatan</th>
+            <th scope="col">Jabatan</th>
             <th scope="col">Created at</th>
             <th scope="col">Update at</th>
             <th scope="col">Action</th>
@@ -119,7 +119,7 @@
             OR telepon LIKE '%$cari%'
             OR email LIKE '%$cari%'");    
            }else{
-            $query = mysqli_query($koneksi,"SELECT * FROM karyawan");  
+            $query = mysqli_query($koneksi,"SELECT A.NIK, A.nama_karyawan, A.tanggal_lahir, A.agama, A.jenis_kelamin, A.alamat, A.telepon, A.email, B.jabatan, A.created_at, A.update_at  FROM karyawan A, jabatan B WHERE A.kd_jabatan=B.id_jabatan ORDER BY A.NIK DESC LIMIT 0,5");  
            }
           while($d = mysqli_fetch_array($query)){
           ?>
@@ -132,7 +132,7 @@
             <td><?php echo $d['alamat']; ?></td>
             <td><?php echo $d['telepon']; ?></td>
             <td><?php echo $d['email']; ?></td>
-            <td><?php echo $d['kd_jabatan']; ?></td>
+            <td><?php echo $d['jabatan']; ?></td>
             <td><?php echo $d['created_at']; ?></td>
             <td><?php echo $d['update_at']; ?></td>
             <td class="text-center">
