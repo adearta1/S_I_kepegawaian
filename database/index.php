@@ -46,7 +46,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="datadiri.php">Data diri</a>
-                <a class="dropdown-item" href="#">Pendidikan</a>
+                <a class="dropdown-item" href="pendidikan.php">Pendidikan</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -54,8 +54,8 @@
                 Absensi
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Absen</a>
-                <a class="dropdown-item" href="#">Izin</a>
+                <a class="dropdown-item" href="absen.php">Absen</a>
+                <a class="dropdown-item" href="izin.php">Izin</a>
               </div>
             </li>
         </ul>
