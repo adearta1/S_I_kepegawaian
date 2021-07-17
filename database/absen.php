@@ -1,7 +1,7 @@
 <?php
 
     require_once 'koneksi.php';
-    $sql ="SELECT * FROM admin WHERE id_admin";
+    $sql ="SELECT * FROM absensi WHERE id_absen";
     $query = $koneksi->query($sql);
 
 ?>
@@ -87,8 +87,8 @@
         <span class="navbar-brand mb-0 h1">Data Admin</span>
       </nav>
       <nav class="navbar navbar-light bg-light">
-          <a href="aksi/admin/tambahdata.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">+ Tambah Data</a>
-          <form action="admin.php" method="get" class="form-inline">
+          <a href="aksi/absen/tambahdata.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">+ Tambah Data</a>
+          <form action="absen.php" method="get" class="form-inline">
               <input name="cari" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
               <button  class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
           </form>
@@ -96,10 +96,10 @@
       <table class="table shadow-sm p-3 mb-5 bg-white rounded mt-2 table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Id Admin</th>
-            <th scope="col">Username</th>
-            <th scope="col">Password</th>
-            <th scope="col">Nama</th>
+            <th scope="col">Id Absen</th>
+            <th scope="col">NIK</th>
+            <th scope="col">Keterangan</th>
+            <th scope="col">Tanggal</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -107,23 +107,21 @@
           <?php
           if(isset($_GET['cari'])){
             $cari = $_GET['cari'];
-            $query = mysqli_query($koneksi,"SELECT * FROM admin WHERE id_admin LIKE '%$cari%' 
-            OR username LIKE '%$cari%'
-            OR password LIKE '%$cari%'
-            OR nama LIKE '%$cari%'");    
+            $query = mysqli_query($koneksi,"SELECT * FROM absensi WHERE id_absen LIKE '%$cari%' 
+            OR NIK LIKE '%$cari%'
+            OR keterangan LIKE '%$cari%'");    
            }else{
-            $query = mysqli_query($koneksi,"SELECT * FROM admin");  
+            $query = mysqli_query($koneksi,"SELECT * FROM absensi");  
            }
           while($d = mysqli_fetch_array($query)){
           ?>
           <tr>
-            <th scope="row"><?php echo $d['id_admin']; ?></th>
-            <td><?php echo $d['username']; ?></td>
-            <td><?php echo $d['password']; ?></td>
-            <td><?php echo $d['nama']; ?></td>
+            <th scope="row"><?php echo $d['id_absen']; ?></th>
+            <td><?php echo $d['NIK']; ?></td>
+            <td><?php echo $d['keterangan']; ?></td>
+            <td><?php echo $d['tanggal']; ?></td>
             <td>
-              <a href="aksi/admin/edit.php?id_admin=<?php echo $d['id_admin']; ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Edit</a>
-              <a href="aksi/admin/delete.php?id_admin=<?php echo $d['id_admin'] ; ?>" onClick='return tanya()' class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Delete</a>
+              <a href="aksi/absen/delete.php?id_absen=<?php echo $d['id_absen'] ; ?>" onClick='return tanya()' class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Delete</a>
             </td>
           </tr>
           <?php
