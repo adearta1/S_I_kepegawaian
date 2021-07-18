@@ -84,7 +84,7 @@
 
     <div class="container-lg mt-5">
       <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">Data Admin</span>
+        <span class="navbar-brand mb-0 h1">Data Absensi</span>
       </nav>
       <nav class="navbar navbar-light bg-light">
           <a href="aksi/absen/tambahdata.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">+ Tambah Data</a>

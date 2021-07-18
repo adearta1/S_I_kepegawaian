@@ -92,6 +92,7 @@
                     </div>
                     <div class="form-group">
                         <textarea name="keterangan" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan keterangan anda"></textarea>
+                    </div>
                     </div class="form-group">
                     <label for="exampleFormControlSelect1">Izin dari tanggal</label>
                         <input type="date" name="izin_tanggal" class="form-control" >
