@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2021 at 11:34 AM
+-- Generation Time: Jul 20, 2021 at 03:38 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -40,8 +40,11 @@ CREATE TABLE `absensi` (
 --
 
 INSERT INTO `absensi` (`id_absen`, `NIK`, `keterangan`, `tanggal`) VALUES
-(2, 19200, 'Hadir', '11:41:49 15/07/2021 '),
-(3, 19201, 'Hadir', '08:25:33 17/07/2021 ');
+(3, 19201, 'Hadir', '08:25:33 17/07/2021 '),
+(4, 19203, 'Hadir', '03:20:09 20/07/2021 '),
+(5, 19204, 'Hadir', '03:20:22 20/07/2021 '),
+(7, 19203, 'Hadir', '03:27:09 20/07/2021 '),
+(8, 19204, 'Hadir', '03:27:19 20/07/2021 ');
 
 -- --------------------------------------------------------
 
@@ -63,8 +66,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama`, `created_at`, `update_at`) VALUES
-(1231, 'bagusmade90', 'made0001', 'bagus made arta nugrahaa', '', ''),
-(1232, 'admin', 'admin', 'admin1', '', '');
+(1231, 'admin', 'admin', 'admin', '', ''),
+(1236, 'bagusmadeartan90', 'made0001', 'Bagus Made Arta Nugrahaa', '02:59:13 20/07/2021 ', ''),
+(1237, 'suardika012', 'suar002', 'made suardika', '02:59:50 20/07/2021 ', '03:00:25 20/07/2021 ');
 
 -- --------------------------------------------------------
 
@@ -87,9 +91,10 @@ CREATE TABLE `izin` (
 --
 
 INSERT INTO `izin` (`id_izin`, `NIK`, `keterangan`, `izin_tanggal`, `sampai_tanggal`, `created_at`, `update_at`) VALUES
-(2, 19200, 'sakit', '0000-00-00', '0000-00-00', '11:56:39 15/07/2021 ', ''),
-(3, 19200, 'sakit pilek', '2021-07-08', '2021-07-09', '12:04:36 15/07/2021 ', '02:54:12 18/07/2021 '),
-(4, 19201, 'sakit kerja kerja kerja tipes', '2021-07-18', '2021-07-21', '02:55:03 18/07/2021 ', '');
+(4, 19201, 'sakit tipes', '2021-07-18', '2021-07-21', '02:55:03 18/07/2021 ', '03:20:57 20/07/2021 '),
+(6, 19203, 'izin menghadiri undangan pernikahan teman', '2021-07-21', '2021-07-22', '03:21:35 20/07/2021 ', ''),
+(7, 19204, 'izin faksinasi tahap ke 2', '2021-07-27', '2021-07-22', '03:22:24 20/07/2021 ', ''),
+(9, 19203, 'izin liburan ke manado', '2021-07-25', '2021-08-07', '03:28:26 20/07/2021 ', '');
 
 -- --------------------------------------------------------
 
@@ -136,8 +141,9 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`NIK`, `nama_karyawan`, `tanggal_lahir`, `agama`, `jenis_kelamin`, `alamat`, `telepon`, `email`, `kd_jabatan`, `created_at`, `update_at`) VALUES
-(19200, 'Made Sanjaya Putra', '2001-07-14', 'Hindu', 'LakiLaki', 'Jalan sudiartono no 51', '0834958325', 'sanjaya00@gmail.com', 333, '', '07:09:39 16/07/2021 '),
-(19201, 'bagus made arta nugraha', '2021-07-07', 'Hindu', 'LakiLaki', 'a', '09', 'bagusmadearta01@gmail.com', 332, '07:34:31 16/07/2021 ', '07:34:57 16/07/2021 ');
+(19201, 'bagus made arta nugraha', '2021-07-07', 'Hindu', 'LakiLaki', 'jalan wibisana utara gang apel manis', '081335683921', 'bagusmadearta01@gmail.com', 331, '07:34:31 16/07/2021 ', '01:36:53 20/07/2021 '),
+(19203, 'dio brando', '2001-06-29', 'Kristen', 'LakiLaki', 'Jalan orarola za warudo no 45', '02456739375', 'konodioda@gmail.com', 332, '03:01:48 20/07/2021 ', ''),
+(19204, 'risma salsabilah ', '2000-07-06', 'Islam', 'Perempuan', 'jalan solahinam gang pojok no 3', '089356784923', 'salsabilah_risma@gmail.com', 331, '03:04:45 20/07/2021 ', '');
 
 -- --------------------------------------------------------
 
@@ -159,7 +165,9 @@ CREATE TABLE `pendidikan` (
 --
 
 INSERT INTO `pendidikan` (`id_pendidikan`, `NIK`, `pendidikan`, `jurusan`, `created_at`, `update_at`) VALUES
-(1, 19201, 'kuliah diploma 3 ', 'manajemen informatika', '', '');
+(2, 19203, 'sarjana perhotelan', 'perhotelan', '03:09:50 20/07/2021 ', ''),
+(3, 19204, 'sarjana pariwisata', 'administrasi ', '03:10:28 20/07/2021 ', ''),
+(4, 19201, 'diploma 3 TI ', 'manajemen informatika', '03:15:47 20/07/2021 ', '03:16:18 20/07/2021 ');
 
 --
 -- Indexes for dumped tables
@@ -213,19 +221,19 @@ ALTER TABLE `pendidikan`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1235;
+  MODIFY `id_admin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1239;
 
 --
 -- AUTO_INCREMENT for table `izin`
 --
 ALTER TABLE `izin`
-  MODIFY `id_izin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_izin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `jabatan`
@@ -237,13 +245,13 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `NIK` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19202;
+  MODIFY `NIK` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19206;
 
 --
 -- AUTO_INCREMENT for table `pendidikan`
 --
 ALTER TABLE `pendidikan`
-  MODIFY `id_pendidikan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pendidikan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
