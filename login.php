@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Login</title>
   </head>
-  <body>
+  <body class="bg-primary">
 
     <!-- Optional JavaScript; choose one of the two! -->
 

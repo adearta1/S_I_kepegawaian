@@ -41,8 +41,8 @@
     </nav>
     <div class="container">
         <div class="container pt-2 pb-2 bg-primary-50 shadow-none p-3 mb-5 bg-white rounded">
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container text-center">
+            <div class="jumbotron jumbotron-fluid bg-secondary">
+                <div class="container text-light text-center">
                     <img src="database/gambar/hobimegel.png" alt="" width="200" class="rounded-circle">
                     <h1 class="display-4">HOBI MEGEL</h1>
                     <p class="lead font-weight-bold">selamat datang dan silahkan melakukan</p>
@@ -84,27 +84,29 @@
             <div class="col-md-7">
             <div class="card">
                 <div class="card-header bg-primary mb-0"><h5 class="text-center text-white"> <span class="font-weight-bold text-light " >Izin</span></h5></div>
-                <div class="card-body">
-                <form action="izin.php" method="post">
-                    <div class="form-group">
-                        <textarea name="created_at" style="display:none"><?php echo date("h:i:s d/m/Y ");?></textarea>
-                        <input type="text" name="NIK" class="form-control" placeholder="Masukkan NIK anda">
+                    <div class="card-body">
+                    <form action="izin.php" method="post">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">NIK</label>
+                            <textarea name="created_at" style="display:none"><?php echo date("h:i:s d/m/Y ");?></textarea>
+                            <input type="text" name="NIK" class="form-control" placeholder="Masukkan NIK Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Keterangan</label>
+                            <textarea name="keterangan" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan keterangan anda"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Izin dari tanggal</label>
+                            <input type="date" name="izin_tanggal" class="form-control" >
+                            <label for="exampleFormControlSelect1">Izin sampai tanggal</label>
+                            <input type="date" name="sampai_tanggal" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-block">
+                        </div>
+                    </form>
                     </div>
-                    <div class="form-group">
-                        <textarea name="keterangan" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan keterangan anda"></textarea>
-                    </div>
-                    </div class="form-group">
-                    <label for="exampleFormControlSelect1">Izin dari tanggal</label>
-                        <input type="date" name="izin_tanggal" class="form-control" >
-                        <label for="exampleFormControlSelect1">Izin sampai tanggal</label>
-                        <input type="date" name="sampai_tanggal" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-block">
-                    </div>
-                </form>
                 </div>
-            </div>
             </div>
             </div>
         </div>

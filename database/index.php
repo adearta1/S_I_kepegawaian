@@ -66,10 +66,10 @@
       </div>
     </nav>
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
+    <div class="jumbotron jumbotron-fluid bg-dark">
+        <div class="container text-light text-center">
             <img src="gambar/hobimegel.png" alt="" width="200" class="rounded-circle">
-          <h1 class="display-1">HOBI MEGEL</h1>
+          <h1 class="display-3">HOBI MEGEL</h1>
           <p class="lead font-weight-bold">selamat datang, <?php echo $_SESSION['username']; ?></p>
         </div>
     </div>

@@ -83,14 +83,14 @@
     </nav>
 
     <div class="container-lg mt-5">
-      <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">Data Admin</span>
+      <nav class="navbar navbar-light bg-dark">
+        <span class="navbar-brand mb-0 text-light h1">Data Admin</span>
       </nav>
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-light bg-dark">
           <a href="aksi/admin/tambahdata.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">+ Tambah Data</a>
           <form action="admin.php" method="get" class="form-inline">
               <input name="cari" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button  class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+              <button  class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
           </form>
       </nav>
       <table class="table shadow-sm p-3 mb-5 bg-white rounded mt-2 table-striped">
