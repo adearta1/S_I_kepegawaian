@@ -82,8 +82,8 @@
                     if (isset($_POST['edit'])) {
                         $id = $_POST['id_pendidikan'];
                         $NIK = $_POST['NIK'];
-                        $keterangan = $_POST['pendidikan'];
-                        $izin_tanggal = $_POST['jurusan'];
+                        $pendidikan = $_POST['pendidikan'];
+                        $jurusan = $_POST['jurusan'];
                         $update_at = $_POST['update_at'];
                         
                         $data = mysqli_query($koneksi,"SELECT * FROM karyawan WHERE NIK='$NIK'");

@@ -41,7 +41,7 @@
     </nav>
     <div class="container">
         <div class="container pt-2 pb-2 bg-primary-50 shadow-none p-3 mb-5 bg-white rounded">
-            <div class="jumbotron jumbotron-fluid bg-secondary">
+            <div class="jumbotron jumbotron-fluid bg-dark">
                 <div class="container text-light text-center">
                     <img src="database/gambar/hobimegel.png" alt="" width="200" class="rounded-circle">
                     <h1 class="display-4">HOBI MEGEL</h1>
@@ -55,7 +55,7 @@
     
         <div class="container shadow sm-3 mb-5 bg-white rounded" style="padding-top: 12rem; padding-bottom: 12rem;" id="absen">
             <div class="row justify-content-md-center ">
-            <div class="col-md-7">
+            <div class="col-md-5">
             <div class="card">
                 <div class="card-header bg-primary mb-0"><h5 class="text-center text-white"> <span class="font-weight-bold text-light " >Absensi</span></h5></div>
                 <div class="card-body">

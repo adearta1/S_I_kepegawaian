@@ -100,6 +100,8 @@
             <th scope="col">Username</th>
             <th scope="col">Password</th>
             <th scope="col">Nama</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Update at</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -121,6 +123,8 @@
             <td><?php echo $d['username']; ?></td>
             <td><?php echo $d['password']; ?></td>
             <td><?php echo $d['nama']; ?></td>
+            <td><?php echo $d['created_at']; ?></td>
+            <td><?php echo $d['update_at']; ?></td>
             <td>
               <a href="aksi/admin/edit.php?id_admin=<?php echo $d['id_admin']; ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Edit</a>
               <a href="aksi/admin/delete.php?id_admin=<?php echo $d['id_admin'] ; ?>" onClick='return tanya()' class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Delete</a>

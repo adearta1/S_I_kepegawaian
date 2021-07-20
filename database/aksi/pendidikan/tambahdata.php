@@ -83,7 +83,7 @@
                   $data = mysqli_query($koneksi,"SELECT * FROM karyawan WHERE NIK='$NIK'");
                    
                   if($data->num_rows > 0){
-                    $sql="INSERT INTO izin values ('','$NIK','$pendidikan','$jurusan','$created_at','')";
+                    $sql="INSERT INTO pendidikan values ('','$NIK','$pendidikan','$jurusan','$created_at','')";
                     mysqli_query($koneksi,$sql) or die ('gagal');
                     echo '<script>alert("Berhasil menambah data."); document.location="../../pendidikan.php";</script>';
                   

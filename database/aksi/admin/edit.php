@@ -84,8 +84,9 @@
                         $nama = $_POST['nama'];
                         $username = $_POST['username'];
                         $password = $_POST['password'];
-                            
-                        $query="UPDATE admin SET id_admin = '$id', username='$username',password='$password',nama='$nama' WHERE id_admin='$id'";
+                        $update_at = $_POST['update_at'];
+                        
+                        $query="UPDATE admin SET id_admin = '$id', username='$username',password='$password',nama='$nama', update_at='$update_at' WHERE id_admin='$id'";
                         $sql=mysqli_query($koneksi,$query);
                         if ($sql) {
                           echo '<script>alert("Berhasil mengedit data."); document.location="../../admin.php";</script>';
@@ -104,6 +105,7 @@
                 <form action="" method="post">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Nama</label>
+                        <textarea name="update_at" style="display:none"><?php echo date("h:i:s d/m/Y ");?></textarea>
                         <input type="hidden" name="id_admin" class="form-control" value="<?php echo $dat['id_admin']; ?>">
                         <input type="text" name="nama" class="form-control" value="<?php echo $dat['nama']; ?>">
                     </div>

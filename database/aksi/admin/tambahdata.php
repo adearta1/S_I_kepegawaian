@@ -79,8 +79,9 @@
                     $username = $_POST['username'];
                     $password=$_POST['password'];
                     $password2=$_POST['password2'];
+                    $created_at=$_POST['created_at'];
                     if($password == $password2){
-                        $sql="INSERT INTO admin (nama,username,password) values ('$nama','$username','$password')";
+                        $sql="INSERT INTO admin (nama,username,password,created_at) values ('$nama','$username','$password','$created_at')";
                         mysqli_query($koneksi,$sql) or die ('gagal');
                         echo '<script>alert("Berhasil menambah data."); document.location="../../admin.php";</script>';
                     }else{ ?>
@@ -92,6 +93,7 @@
                 ?>
                 <form action="" method="post">
                     <div class="form-group">
+                        <textarea name="created_at" style="display:none"><?php echo date("h:i:s d/m/Y ");?></textarea>
                         <label for="exampleFormControlSelect1">Nama</label>
                         <input type="text" name="nama" class="form-control" placeholder="Masukkan Nama Lengkap Anda">
                     </div>
