@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2021 at 05:21 PM
+-- Generation Time: Jul 25, 2021 at 06:08 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -65,7 +65,8 @@ INSERT INTO `member` (`kode`, `nama`, `notlp`) VALUES
 (3135, 'made bagus', '1232414'),
 (3136, 'risa wanah', '05863725'),
 (3137, 'surjeh', '087498586'),
-(3138, 'alivevil', '09456262');
+(3138, 'alivevil', '09456262'),
+(3140, 'risa wanaha', '05863725');
 
 -- --------------------------------------------------------
 
@@ -99,7 +100,12 @@ INSERT INTO `transaksi` (`no_struk`, `no_plat`, `tanggal`, `nama_member`, `tipe`
 (7, 'DF 4567 DD', 'Sunday, June 27, 2021', 'surjeh', 'Full Service', 'Wax, Engine, Inner and Seat', 'Rp. 279,000', 600000, 'Rp. 321,000'),
 (8, 'DF 6666 ER', 'Sunday, June 27, 2021', 'alivevil', 'Half Service', 'Wax, Engine, Inner and Seat', 'Rp. 261,000', 500000, 'Rp. 239,000'),
 (9, 'DF 6878 FG', 'Sunday, June 27, 2021', 'Tidak Member', 'Half Service', 'Wax, Engine, Inner and Seat', 'Rp. 290,000', 290000, 'Rp. '),
-(10, 'DK 5476 MK', 'Sunday, June 27, 2021', 'Tidak Member', 'Full Service', 'Wax', 'Rp. 150,000', 200000, 'Rp. 50,000');
+(10, 'DK 5476 MK', 'Sunday, June 27, 2021', 'Tidak Member', 'Full Service', 'Wax', 'Rp. 150,000', 200000, 'Rp. 50,000'),
+(12, 'DK 5647 KM', 'Friday, July 2, 2021', 'Tidak Member', 'Full Service', 'Wax', 'Rp. 150,000', 200000, 'Rp. 50,000'),
+(15, 'DK 5678 HG', 'Friday, July 2, 2021', 'Tidak Member', 'Half Service', 'Wax, Engine', 'Rp. 230,000', 300000, 'Rp. 70,000'),
+(18, 'DK7845TR', 'Sunday, July 25, 2021', 'made bagus', 'Full Service', 'Wax, Engine', 'Rp. 225,000', 300000, 'Rp. 75,000'),
+(34, 'DK6789LP', 'Sunday, July 25, 2021', 'risa wanah', 'Full Service', 'Wax, Engine', 'Rp. 225,000', 300000, 'Rp. 75,000'),
+(123, '123', 'Friday, July 2, 2021', 'Tidak Member', 'Full Service', '', 'Rp. 80,000', 200000, 'Rp. 120,000');
 
 --
 -- Indexes for dumped tables
@@ -131,19 +137,19 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1235;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1237;
 
 --
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3139;
+  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3143;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `no_struk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `no_struk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
